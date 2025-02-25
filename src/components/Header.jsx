@@ -5,7 +5,7 @@ const Header = () => {
     return (
 
         <div>
-            <h1 class="p-3 mb-2 bg-danger text-white container text-center">Galeria de Imágenes</h1>
+            <h1 class='p-3 bg-danger text-white container-full text-center'>Galeria de Imágenes</h1>
 
             <div className='d-flex container mt-5 mb-5'>
 
