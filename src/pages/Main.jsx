@@ -1,100 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Main.css'
+import { CardView } from '../components/CardView';
 
 const Main = () => {
+
+    useEffect(() => {
+        const obtenerDatos = async () => {
+            try {
+                const response = await fetch('/JSON/apiLocal.json')
+                const data = await response.json()
+
+                console.log(data)
+            } catch (e) {
+                console.error(e)
+            }
+
+        };
+        obtenerDatos();
+
+    }, []);
+
+
+
     return (
         <div>
-            <div className='gallery container'>
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-7.avif" alt="woman singing on stage" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-0.avif" alt="guitar player at concert" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-1.avif" alt="duo singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-2.avif" alt="crowd cheering" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-3.avif" alt="singer performing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-4.avif" alt="singer fistbumping crowd" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-5.avif" alt="man with a guitar singing" />
-                <img src="https://assets.codepen.io/1506195/unsplash-music-6.avif" alt="crowd looking at a lighted stage" />
-            </div>
+            <CardView />
         </div>
-
     )
 }
 
+/*<div className='gallery container'>
+
+                {fotos.map(ft => (
+                    <div>
+
+                        <img src={ft.img} alt="guitar player at concert" />
+                    </div>
+                ))}
+
+
+            </div>*/
 export { Main }

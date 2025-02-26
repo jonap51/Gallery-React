@@ -1,0 +1,502 @@
+[
+    {
+        "id": 1,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 2,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 3,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 4,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 5,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 6,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 7,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 8,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 9,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 10,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 11,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 12,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 13,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 14,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 15,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 16,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 17,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 18,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 19,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 20,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 21,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 22,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 23,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 24,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 25,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 26,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 27,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 28,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 29,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 30,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 31,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 32,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 33,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 34,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 35,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 36,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 37,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 38,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 39,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 40,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 41,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 42,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 43,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 44,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 45,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 46,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 47,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 48,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 49,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 50,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 51,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 52,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 53,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 54,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 55,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 56,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 57,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 58,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 59,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 60,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 61,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 62,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 63,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 64,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 65,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 66,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 67,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 68,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 69,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 70,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 71,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 72,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 73,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 74,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 75,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 76,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 77,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 78,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 79,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 80,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 81,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 82,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 83,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 84,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 85,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 86,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 87,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 88,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 89,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 90,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 91,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 92,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    },
+    {
+        "id": 93,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-4.avif",
+        "alt": "singer fistbumping crowd"
+    },
+    {
+        "id": 94,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-5.avif",
+        "alt": "man with a guitar singing"
+    },
+    {
+        "id": 95,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-6.avif",
+        "alt": "crowd looking at a lighted stage"
+    },
+    {
+        "id": 96,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-7.avif",
+        "alt": "woman singing on stage"
+    },
+    {
+        "id": 97,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-0.avif",
+        "alt": "guitar player at concert"
+    },
+    {
+        "id": 98,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-1.avif",
+        "alt": "duo singing"
+    },
+    {
+        "id": 99,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-2.avif",
+        "alt": "crowd cheering"
+    },
+    {
+        "id": 100,
+        "img": "https://assets.codepen.io/1506195/unsplash-music-3.avif",
+        "alt": "singer performing"
+    }
+]
