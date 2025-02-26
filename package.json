@@ -1,6 +1,6 @@
 {
   "name": "gallery",
-  "homepage": "https://jonap51.github.io/Gallery-React",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

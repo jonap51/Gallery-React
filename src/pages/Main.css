@@ -1,15 +1,12 @@
 .gallery {
     --size: 100px;
     display: grid;
-    grid-auto-rows: var(--size);
     grid-template-columns: repeat(12, var(--size));
+    /* repeat(12, 2fr);*/
+    grid-auto-rows: var(--size);
     margin-bottom: var(--size);
     place-items: start center;
-    gap: 15px;
-    perspective: 1000px;
-
-
-
+    gap: 5px;
 
     &:has(:hover) img:not(:hover),
     &:has(:focus) img:not(:focus) {
@@ -24,45 +21,21 @@
         transition: clip-path 0.25s, filter 0.75s;
         grid-column: auto / span 2;
         border-radius: 5px;
-        animation: moveLeft 10s linear infinite;
-
-
 
         &:nth-child(11n +7) {
             grid-column: 2 / span 2
         }
-
-
-        /* {
-            /* Selecciona las imágenes del lado derecho 
-            transform: rotate3d(0, 20, -1, 30deg);
-            /* Ajusta el ángulo 
-            transform-origin: left right;
-
-        }*/
 
         &:hover,
         &:focus {
             clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z");
             z-index: 1;
             transition: clip-path 0.25s, filter 0.25s;
-            cursor: pointer;
         }
 
         &:focus {
             outline: 1px dashed black;
             outline-offset: -5px;
-        }
-    }
-
-
-    @keyframes moveLeft {
-        0% {
-            left: 100%;
-        }
-
-        100% {
-            left: -500%;
         }
     }
 }
