@@ -5,6 +5,8 @@ import './Main.css'
 const Main = () => {
 
     const [fotos, setFotos] = useState([])
+    const [imageHidden, setImageHidden] = useState(false)
+
     useEffect(() => {
         const obtenerDatos = async () => {
             try {
@@ -17,30 +19,30 @@ const Main = () => {
             }
         };
         obtenerDatos();
-
-
     }, []);
 
-    console.log(fotos, 'hola')
+
+
+    const mostrarImagen = () => {
+        setImageHidden(true);
+        console.log('hiciste click en la imagen')
+
+    };
 
     return (
+
         <div>
-            <CardView />
 
             <div className='gallery container'>
                 {fotos.map((ft) => (
-                    <img key={ft.id} src={ft.img} alt={ft.alt} />
+                    <img key={ft.id} src={ft.img} alt={ft.alt} onClick={mostrarImagen} />
                 ))}
             </div>
+            {imageHidden && <CardView />}
 
         </div>
+
     )
 }
-/*  <div className='gallery container'>
-                {fotos.map((ft) => (
-                    <div key={ft.id}>
-                        <img src={ft.img} alt={ft.alt} />
-                    </div>
-                ))}
-            </div>*/
+
 export { Main }
