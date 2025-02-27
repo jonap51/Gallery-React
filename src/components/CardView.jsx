@@ -1,6 +1,6 @@
 
 
-const CardView = () => {
+const CardView = ({ imagen, asd }) => {
 
 
     const displayZoom = {
@@ -18,8 +18,6 @@ const CardView = () => {
         backdropFilter: 'blur(2px)'
     }
 
-
-
     const styleImage = {
         width: '95%',
         height: '70vh',
@@ -28,12 +26,20 @@ const CardView = () => {
     };
 
 
+    const ocultar = (event) => {
+        if (event.target === event.currentTarget) {
+            asd(null)
+            console.log('hiciste click en el card')
+        }
+    }
+
+
     return (
-        <div style={displayZoom} >
+        <div style={displayZoom} onClick={ocultar} className="pepito">
             <div className="card mb-3 container" >
                 <div className="row g-0">
                     <div className="col-md-8">
-                        <img src='https://assets.codepen.io/1506195/unsplash-music-7.avif' style={styleImage} className="img-fluid rounded-start" alt="..." />
+                        <img src={imagen.img} alt={imagen.alt} className="img-fluid rounded-start" style={styleImage} />
                     </div>
                     <div className="col-md-4">
                         <div className="card-body" >
@@ -47,6 +53,5 @@ const CardView = () => {
         </div>
     )
 }
-
 
 export { CardView }
