@@ -23,11 +23,12 @@ const Main = () => {
     console.log(fotos)
 
 
-    const mostrarImagen = (img) => {
-        setImageHidden(img);
-        console.log('hiciste click en la imagen')
+    const mostrarImagen = (ft) => {
+        setImageHidden(ft);
 
     };
+
+
 
     return (
 
@@ -36,9 +37,12 @@ const Main = () => {
             <div className='gallery container'>
                 {fotos.map((ft) => (
                     <img key={ft.id} src={ft.img} alt={ft.alt} onClick={() => mostrarImagen(ft)} />
+
+
+
                 ))}
             </div>
-            {imageHidden && <CardView imagen={imageHidden} asd={setImageHidden} />}
+            {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} foto={fotos} />}
 
         </div>
 
