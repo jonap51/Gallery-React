@@ -10,7 +10,11 @@ const Main = () => {
     useEffect(() => {
         const obtenerDatos = async () => {
             try {
-                const response = await fetch(process.env.PUBLIC_URL + '/JSON/apiLocal.json')
+                const response = await fetch('https://api.unsplash.com/photos/random?count=', {
+                    headers: {
+                        Authorization: 'Client-ID FOSXf1dXzj3j0m5N394rm-wa8cb71AhTQzc0icjxjQ4',
+                    },
+                })
                 const data = await response.json()
                 setFotos(data)
 
@@ -22,25 +26,20 @@ const Main = () => {
     }, []);
     console.log(fotos)
 
-
     const mostrarImagen = (ft) => {
         setImageHidden(ft);
 
     };
 
 
-
     return (
-
         <div>
-
             <div className='gallery container'>
                 {fotos.map((ft) => (
-                    <img key={ft.id} src={ft.img} alt={ft.alt} onClick={() => mostrarImagen(ft)} />
+                    <img key={ft.id} src={ft.urls.regular} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />
                 ))}
             </div>
             {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} foto={fotos} />}
-
         </div>
     )
 }

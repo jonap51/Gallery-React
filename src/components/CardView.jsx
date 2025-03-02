@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 const CardView = ({ imagen, setImage, foto }) => {
 
     const [index, setIndex] = useState(foto.indexOf(imagen))
@@ -56,7 +55,7 @@ const CardView = ({ imagen, setImage, foto }) => {
                 <div className="card mb-3 container" >
                     <div className="row g-0">
                         <div className="col-md-8">
-                            <img src={foto[index].img} alt={foto[index].alt} className="img-fluid rounded-start" style={styleImage} />
+                            <img src={foto[index].urls.regular} alt={foto[index].alt_description} className="img-fluid rounded-start" style={styleImage} />
                         </div>
                         <div className="col-md-4">
                             <div className="card-body" >
