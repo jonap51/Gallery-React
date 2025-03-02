@@ -10,7 +10,7 @@ const Main = () => {
     useEffect(() => {
         const obtenerDatos = async () => {
             try {
-                const response = await fetch('https://api.unsplash.com/photos/random?count=', {
+                const response = await fetch('https://api.unsplash.com/photos/random?count=28', {
                     headers: {
                         Authorization: 'Client-ID FOSXf1dXzj3j0m5N394rm-wa8cb71AhTQzc0icjxjQ4',
                     },
