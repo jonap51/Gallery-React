@@ -1,12 +1,11 @@
 .gallery {
-    --size: 100px;
+    --size: 120px;
     display: grid;
     grid-template-columns: repeat(12, var(--size));
-    /* repeat(12, 2fr);*/
     grid-auto-rows: var(--size);
     margin-bottom: var(--size);
     place-items: start center;
-    gap: 5px;
+    gap: 15px;
 
     &:has(:hover) img:not(:hover),
     &:has(:focus) img:not(:focus) {
@@ -17,7 +16,7 @@
         object-fit: cover;
         width: calc(var(--size) * 2);
         height: calc(var(--size) * 2);
-        clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z");
+        clip-path: path("M108,12 C120,0 120,0 132,12 228,108 228,108 228,108 240,120 240,120 228,132 228,132 132,228 132,228 120,240 120,240 108,228 108,228 12,132 12,132 0,120 0,120 12,108Z");
         transition: clip-path 0.25s, filter 0.75s;
         grid-column: auto / span 2;
         border-radius: 5px;
@@ -28,7 +27,7 @@
 
         &:hover,
         &:focus {
-            clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z");
+            clip-path: path("M0,0 C0,0 240,0 240,0 240,0 240,120 240,120 240,120 240,240 240,240 240,240 120,240 120,240 120,240 120,240 0,240 0,240 0,120 0,120 0,120 0,120 0,120Z");
             z-index: 1;
             transition: clip-path 0.25s, filter 0.25s;
         }

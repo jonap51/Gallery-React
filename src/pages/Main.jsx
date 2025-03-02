@@ -34,9 +34,9 @@ const Main = () => {
 
     return (
         <div>
-            <div className='gallery container'>
+            <div className='gallery justify-content-center'>
                 {fotos.map((ft) => (
-                    <img key={ft.id} src={ft.urls.regular} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />
+                    <img key={ft.id} src={ft.urls.small_s3} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />
                 ))}
             </div>
             {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} foto={fotos} />}
