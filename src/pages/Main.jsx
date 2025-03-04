@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CardView } from '../components/CardView';
 import './Main.css'
+
 const Main = () => {
 
     const [fotos, setFotos] = useState([])
