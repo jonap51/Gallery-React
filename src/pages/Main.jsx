@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CardView } from '../components/CardView';
+import { UnsplashContext } from '../service/UnsplashContext';
 import './Main.css'
 
-const Main = () => {
 
-    const [fotos, setFotos] = useState([])
+const Main = () => {
+    const { obtenerRandom, fotos } = useContext(UnsplashContext);
     const [imageHidden, setImageHidden] = useState(null)
-    const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+    //  const [fotos, setFotos] = useState([])
+
 
     useEffect(() => {
-        const obtenerDatos = async () => {
-            try {
-                const response = await fetch('https://api.unsplash.com/photos/random?count=28', {
-                    headers: {
-                        Authorization: `Client-ID ${accessKey}`,
-                    },
-                })
-                const data = await response.json()
-                setFotos(data)
+        obtenerRandom()
+    }, [obtenerRandom])
 
-            } catch (e) {
-                console.error(e)
-            }
-        };
-        obtenerDatos();
-    }, [accessKey]);
+
+
     console.log(fotos)
 
     const mostrarImagen = (ft) => {
