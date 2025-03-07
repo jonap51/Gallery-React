@@ -1,22 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { CardView } from '../components/CardView';
 import { UnsplashContext } from '../service/UnsplashContext';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import './Main.css'
 
 
+
 const Main = () => {
-    const { obtenerRandom, fotos } = useContext(UnsplashContext);
+    const { getRandom, fotos, boleanInfinite, searchPhotos, pageNumber, setPageNumber } = useContext(UnsplashContext);
     const [imageHidden, setImageHidden] = useState(null)
-    //  const [fotos, setFotos] = useState([])
+
 
 
     useEffect(() => {
-        obtenerRandom()
-    }, [obtenerRandom])
+        getRandom()
+    }, [getRandom])
 
 
+    console.log(fotos, ' esta es la data del getRandom')
 
-    console.log(fotos)
 
     const mostrarImagen = (ft) => {
         setImageHidden(ft);
@@ -24,15 +26,33 @@ const Main = () => {
     };
 
 
+    useEffect(() => {
+        if (pageNumber > 1) {
+            searchPhotos()
+        }
+
+    }, [pageNumber]);
+
+
     return (
         <div>
+            <InfiniteScroll
+                dataLength={fotos.length}
+                next={() => setPageNumber(pageNumber + 1)}
+                hasMore={boleanInfinite}
+                loader={<h4>Loading...</h4>}
+            >
+                <div className='gallery justify-content-center'>
 
-            <div className='gallery justify-content-center'>
-                {fotos.map((ft) => (
-                    <img key={ft.id} src={ft.urls.small_s3} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />
-                ))}
-            </div>
+                    {fotos.map((ft) => (
+                        <img key={ft.id} src={ft.urls.small_s3} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />
+
+                    ))}
+
+                </div>
+            </InfiniteScroll>
             {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} foto={fotos} />}
+
         </div>
     )
 }

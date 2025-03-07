@@ -1,40 +1,18 @@
 import { useEffect, useState } from "react";
+import './CardView.css'
 
 const CardView = ({ imagen, setImage, foto }) => {
 
     const [index, setIndex] = useState(foto.indexOf(imagen))
 
-    const displayZoom = {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'rgba(105, 105, 105, 0.8)',
-        height: '100vh',
-        position: 'fixed',
-        left: '0',
-        right: '0',
-        top: '0',
-        bottom: '0',
-        zIndex: '1',
-        backdropFilter: 'blur(2px)'
-    }
-
-    const styleImage = {
-        width: '95%',
-        height: '90vh',
-        objectFit: 'cover',
-        margin: '20px '
-    };
-
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.keyCode === 27) {
+            if (event.key === 'Escape') {
                 setImage(null);
             }
         };
 
         window.addEventListener('keydown', handleKeyDown);
-
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
@@ -54,13 +32,13 @@ const CardView = ({ imagen, setImage, foto }) => {
         <div id="carouselExample" className="carousel slide">
 
 
-            <div style={displayZoom} onClick={ocultar}>
+            <div className='display-zoom' onClick={ocultar}>
 
                 <div className="card mb-3 container" style={{ width: '100%', objectPosition: 'center' }}>
                     <div className="row g-0">
 
                         <div className="col-md-9 vh75">
-                            <img src={foto[index].urls.regular} alt={foto[index].alt_description} className="img-fluid rounded-start" style={styleImage} />
+                            <img src={foto[index].urls.regular} alt={foto[index].alt_description} className="img-fluid rounded-start style-image" />
                         </div>
 
 
@@ -70,8 +48,6 @@ const CardView = ({ imagen, setImage, foto }) => {
                                 <p className="card-text">or, sit amet consectetur adipi {foto[index].exif.model} </p>
                                 <p className="card-text"><small className="text-body-secondary"> asdd</small></p>
                                 <p className="card-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, ullam! Ut, delectus, ratione placeat, dignissimos consectetur aliquam labore expedita harum veniam tenetur quis rem? Iusto eveniet aperiam soluta eligendi molestiae?</p>
-
-
                             </div>
                         </div>
                     </div>

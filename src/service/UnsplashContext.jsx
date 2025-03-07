@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useCallback, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 
 // Crear el contexto
 const UnsplashContext = createContext();
@@ -7,13 +7,16 @@ const UnsplashContext = createContext();
 // Proveedor del contexto
 const UnsplashProvider = ({ children }) => {
 
-    const [fotos, setFotos] = useState([]);
+    const [fotos, setFotos] = useState([])
+    const [ingresarBusqueda, setIngresarBusqueda] = useState('')
+    const [boleanInfinite, setBoleanInfinite] = useState(false)
+    const [pageNumber, setPageNumber] = useState(1)
 
     //key de Unsplash
     const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
 
-    // Función para obtener fotos randoms
-    const obtenerRandom = useCallback(async () => {
+    //Función para buscar fotos
+    const getRandom = useCallback(async () => {
         try {
             const response = await axios.get('https://api.unsplash.com/photos/random?count=28', {
                 headers: {
@@ -21,11 +24,38 @@ const UnsplashProvider = ({ children }) => {
                 },
             })
             setFotos(response.data)
+            setBoleanInfinite(false)
 
         } catch (e) {
             console.error(e)
         }
     }, [accessKey])
+
+    //Función para buscar fotos
+    const searchPhotos = async () => {
+        try {
+            const response = await axios(`https://api.unsplash.com/search/photos?page=${pageNumber}&query=${ingresarBusqueda}&per_page=28`, {
+                headers: {
+                    Authorization: `Client-ID ${accessKey}`,
+                },
+            });
+            const data = response.data.results
+            setBoleanInfinite(true)
+
+            //Si la página es 1, se guarda en 'fotos', sino se agrega el nuevo array a 'fotos'
+            if (pageNumber === 1) {
+                setFotos(data)
+            } else {
+                setFotos((prevFotos) => [...prevFotos, ...data]);
+            }
+
+        } catch (error) {
+            console.error("Error fetching search photos:", error);
+        }
+    }
+
+
+
 
 
 
@@ -48,11 +78,15 @@ const UnsplashProvider = ({ children }) => {
     // Valores que se compartirán
     const value = {
         fotos,
-        obtenerRandom
+        getRandom,
+        setIngresarBusqueda,
+        setFotos,
+        searchPhotos,
+        boleanInfinite,
+        setPageNumber,
+        pageNumber
 
     };
-
-
 
     return (
         <UnsplashContext.Provider value={value}>
