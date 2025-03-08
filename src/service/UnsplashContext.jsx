@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useCallback, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useState } from 'react';
 
 // Crear el contexto
 const UnsplashContext = createContext();
@@ -9,6 +9,8 @@ const UnsplashProvider = ({ children }) => {
 
     const [fotos, setFotos] = useState([])
     const [ingresarBusqueda, setIngresarBusqueda] = useState('')
+    const [fotoId, setFotoId] = useState([])
+
     const [boleanInfinite, setBoleanInfinite] = useState(false)
     const [pageNumber, setPageNumber] = useState(1)
 
@@ -54,26 +56,21 @@ const UnsplashProvider = ({ children }) => {
         }
     }
 
+    // Función para obtener una foto por ID
+    const photoById = async (imagen) => {
+        try {
+            const response = await axios(`https://api.unsplash.com/photos/${imagen}`, {
+                headers: {
+                    Authorization: `Client - ID ${accessKey}`,
+                },
+            });
+            const data = response.data
+            console.log(data)
 
-
-
-
-
-
-
-
-    /*
-        // Función para obtener una foto por ID
-        const fetchPhotoById = async (id) => {
-            try {
-                const response = await fetch(`https://api.unsplash.com/photos/${id}?client_id=TU_CLIENT_ID`);
-                const data = await response.json();
-                setPhotoById(data);
-            } catch (error) {
-                console.error("Error fetching photo by ID:", error);
-            }
-      */
-
+        } catch (error) {
+            console.error("Error fetching photo by ID:", error);
+        }
+    }
 
     // Valores que se compartirán
     const value = {
@@ -84,7 +81,10 @@ const UnsplashProvider = ({ children }) => {
         searchPhotos,
         boleanInfinite,
         setPageNumber,
-        pageNumber
+        pageNumber,
+        photoById,
+        fotoId
+
 
     };
 

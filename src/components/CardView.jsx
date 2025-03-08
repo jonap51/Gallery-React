@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import './CardView.css'
+import { UnsplashContext } from "../service/UnsplashContext";
 
-const CardView = ({ imagen, setImage, foto }) => {
+const CardView = ({ imagen, setImage }) => {
+    const { fotos, photoById } = useContext(UnsplashContext)
 
-    const [index, setIndex] = useState(foto.indexOf(imagen))
+    const [index, setIndex] = useState(fotos.indexOf(imagen))
 
+    //cerrar Card View con la tecla ESC
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === 'Escape') {
@@ -18,12 +21,17 @@ const CardView = ({ imagen, setImage, foto }) => {
         };
     }, [setImage]);
 
-
+    //cerrar Card View al clickear afuera de la card
     const ocultar = (event) => {
         if (event.target === event.currentTarget) {
             setImage(null)
         }
     }
+    useEffect(() => {
+        photoById(imagen.id)
+    }, [imagen.id])
+
+
 
 
     return (
@@ -38,15 +46,15 @@ const CardView = ({ imagen, setImage, foto }) => {
                     <div className="row g-0">
 
                         <div className="col-md-9 vh75">
-                            <img src={foto[index].urls.regular} alt={foto[index].alt_description} className="img-fluid rounded-start style-image" />
+                            <img src={fotos[index].urls.regular} alt={fotos[index].alt_description} className="img-fluid rounded-start style-image" />
                         </div>
 
 
                         <div className="col-md-3">
                             <div className="card-body">
-                                <h5 className="card-title"> or, sit amet consectetur adipi{foto[index].description}</h5>
-                                <p className="card-text">or, sit amet consectetur adipi {foto[index].exif.model} </p>
-                                <p className="card-text"><small className="text-body-secondary"> asdd</small></p>
+                                <h5 className="card-title"> or, sit amet consectetur adipi{fotos[index].description}</h5>
+                                <p className="card-text">or, sit amet consectetur adipi {fotos[index].exif.model} </p>
+                                <p className="card-text"><small className="text-body-secondary"> fotoId</small></p>
                                 <p className="card-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, ullam! Ut, delectus, ratione placeat, dignissimos consectetur aliquam labore expedita harum veniam tenetur quis rem? Iusto eveniet aperiam soluta eligendi molestiae?</p>
                             </div>
                         </div>
@@ -55,7 +63,7 @@ const CardView = ({ imagen, setImage, foto }) => {
 
 
                 <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"
-                    disabled={index === foto.length - 1 ? 'disabled' : ''} onClick={() => setIndex(index + 1)}>
+                    disabled={index === fotos.length - 1 ? 'disabled' : ''} onClick={() => setIndex(index + 1)}>
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>

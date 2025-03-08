@@ -33,6 +33,7 @@ const Main = () => {
 
     }, [pageNumber]);
 
+    console.log(fotos.id, 'id de las fots')
 
     return (
         <div>
@@ -51,7 +52,7 @@ const Main = () => {
 
                 </div>
             </InfiniteScroll>
-            {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} foto={fotos} />}
+            {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} />}
 
         </div>
     )
