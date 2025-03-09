@@ -16,13 +16,8 @@ const Main = () => {
         getRandom()
     }, [getRandom])
 
-
-    console.log(fotos, ' esta es la data del getRandom')
-
-
     const mostrarImagen = (ft) => {
         setImageHidden(ft);
-
     };
 
 
@@ -30,10 +25,7 @@ const Main = () => {
         if (pageNumber > 1) {
             searchPhotos()
         }
-
     }, [pageNumber]);
-
-    console.log(fotos.id, 'id de las fots')
 
     return (
         <div>

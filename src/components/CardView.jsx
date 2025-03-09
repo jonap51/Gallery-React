@@ -3,7 +3,7 @@ import './CardView.css'
 import { UnsplashContext } from "../service/UnsplashContext";
 
 const CardView = ({ imagen, setImage }) => {
-    const { fotos, photoById } = useContext(UnsplashContext)
+    const { fotos, photoById, fotoId, searchPhotos, setPageNumber } = useContext(UnsplashContext)
 
     const [index, setIndex] = useState(fotos.indexOf(imagen))
 
@@ -28,10 +28,14 @@ const CardView = ({ imagen, setImage }) => {
         }
     }
     useEffect(() => {
-        photoById(imagen.id)
-    }, [imagen.id])
+        photoById(fotos[index].id)
+    }, [index])
 
-
+    const tagPhotoSearch = () => {
+        searchPhotos()
+        setImage(null)
+        setPageNumber(1)
+    }
 
 
     return (
@@ -52,9 +56,12 @@ const CardView = ({ imagen, setImage }) => {
 
                         <div className="col-md-3">
                             <div className="card-body">
-                                <h5 className="card-title"> or, sit amet consectetur adipi{fotos[index].description}</h5>
-                                <p className="card-text">or, sit amet consectetur adipi {fotos[index].exif.model} </p>
-                                <p className="card-text"><small className="text-body-secondary"> fotoId</small></p>
+                                <h5 className="card-title">
+                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) => (<span key={tags.title} onClick={tagPhotoSearch} className="badge rounded-pill text-bg-warning me-3" style={{ cursor: 'pointer' }}> {tags.title} </span>))}
+                                </h5>
+                                <p className="card-text">or, sit amet consectetur adipi  </p>
+                                <p className="card-text m-4"><small className="text-body-secondary"> asd
+                                </small></p>
                                 <p className="card-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, ullam! Ut, delectus, ratione placeat, dignissimos consectetur aliquam labore expedita harum veniam tenetur quis rem? Iusto eveniet aperiam soluta eligendi molestiae?</p>
                             </div>
                         </div>

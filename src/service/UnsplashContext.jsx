@@ -10,9 +10,9 @@ const UnsplashProvider = ({ children }) => {
     const [fotos, setFotos] = useState([])
     const [ingresarBusqueda, setIngresarBusqueda] = useState('')
     const [fotoId, setFotoId] = useState([])
-
-    const [boleanInfinite, setBoleanInfinite] = useState(false)
     const [pageNumber, setPageNumber] = useState(1)
+    const [boleanInfinite, setBoleanInfinite] = useState(false)
+
 
     //key de Unsplash
     const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
@@ -34,6 +34,7 @@ const UnsplashProvider = ({ children }) => {
     }, [accessKey])
 
     //Función para buscar fotos
+
     const searchPhotos = async () => {
         try {
             const response = await axios(`https://api.unsplash.com/search/photos?page=${pageNumber}&query=${ingresarBusqueda}&per_page=28`, {
@@ -56,16 +57,17 @@ const UnsplashProvider = ({ children }) => {
         }
     }
 
+
     // Función para obtener una foto por ID
     const photoById = async (imagen) => {
         try {
             const response = await axios(`https://api.unsplash.com/photos/${imagen}`, {
                 headers: {
-                    Authorization: `Client - ID ${accessKey}`,
+                    Authorization: `Client-ID ${accessKey}`,
                 },
             });
             const data = response.data
-            console.log(data)
+            setFotoId(data)
 
         } catch (error) {
             console.error("Error fetching photo by ID:", error);

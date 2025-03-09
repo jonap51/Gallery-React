@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UnsplashContext } from '../service/UnsplashContext';
 
 const Header = () => {
 
     //uso context desde UnsplashContext para llamar a la api y todos los valores útiles
-    const { ingresarBusqueda, setIngresarBusqueda, searchPhotos } = useContext(UnsplashContext)
+    const { ingresarBusqueda, setIngresarBusqueda, searchPhotos, setPageNumber, pageNumber } = useContext(UnsplashContext)
 
-    // Función para llamar "buscar fotos"
+    // Función para llamar "buscar fotos" con CLICK
     const searchPhotosClick = () => {
         searchPhotos()
     }
-
+    // Función para llamar "buscar fotos" con ENTER
     const searchKeyEnter = (event) => {
         if (event.key === 'Enter') {
             searchPhotos()
@@ -18,6 +18,10 @@ const Header = () => {
     };
 
 
+    useEffect(() => {
+        setPageNumber(1)
+        console.log(pageNumber, 'USE EFFECT')
+    }, [searchPhotos])
 
     //tomo valor del input
     const actualizarBusqueda = (event) => {
