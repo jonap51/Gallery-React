@@ -10,7 +10,7 @@ En este proyecto crearé una GALERIA DE IMÁGENES usando React.
 
 ### Cambios que se fueron realizando.
 
-- Coloque la opción de cancelar (cerrar) imagen con la tecla ESC.
+- Coloque la opción de cancelar (cerrar) imagen con la tecla ESC. (en proceso)
 
 - Podia mantener para todas las imagenes el mismo alto y el mismo ancho fijo, pero eso causaba que como todas las imagenes no tienen las mismas dimensiones, algunas imagenes salgan con la cabeza cortada, o que no se aprecie bien la imagen o lo que queria transmitir el artista en su foto. Asi que me parecio mejor que la imagen respete una altura, y que se ajuste su ancho respectivamente sea necesario para mostrar la imagen completa. Esteticamente en la pagina no queda tan bien, pero la imagen se puede apreciar. Podria tambien ocupar toda la pantalla, pero la idea es que sea un cardView, y que el fondo este difuminado con el blur. (En Proceso)
 
