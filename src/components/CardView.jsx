@@ -1,11 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import './CardView.css'
 import { UnsplashContext } from "../service/UnsplashContext";
 
 const CardView = ({ imagen, setImage }) => {
-    const { fotos, photoById, fotoId, searchPhotos, setPageNumber } = useContext(UnsplashContext)
+    const { fotos, photoById, fotoId, setIngresarBusqueda, ingresarBusqueda, searchPhotos, updateIngresarBusquedaAndSearch } = useContext(UnsplashContext)
 
     const [index, setIndex] = useState(fotos.indexOf(imagen))
+    const [tituloTag, setTituloTag] = useState(null)
 
     //cerrar Card View con la tecla ESC
     useEffect(() => {
@@ -14,7 +15,6 @@ const CardView = ({ imagen, setImage }) => {
                 setImage(null);
             }
         };
-
         window.addEventListener('keydown', handleKeyDown);
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
@@ -27,28 +27,36 @@ const CardView = ({ imagen, setImage }) => {
             setImage(null)
         }
     }
+    //obtiene los tags de la foto en el CardView
     useEffect(() => {
         photoById(fotos[index].id)
+
     }, [index])
 
-    const tagPhotoSearch = () => {
-        searchPhotos()
-        setImage(null)
-        setPageNumber(1)
+
+
+    // Función para manejar la búsqueda por tag
+
+    const tagPhotoSearch = (tags) => {
+        updateIngresarBusquedaAndSearch(tags.title)
+        setImage(null);
+        console.log(tags.title, ' tag DENTRO del click CARD')
+
     }
+
+
+
+
+    console.log(ingresarBusqueda, 'tag AFUERA del click CARD')
+
 
 
     return (
 
-
         <div id="carouselExample" className="carousel slide">
-
-
             <div className='display-zoom' onClick={ocultar}>
-
                 <div className="card mb-3 container" style={{ width: '100%', objectPosition: 'center' }}>
                     <div className="row g-0">
-
                         <div className="col-md-9 vh75">
                             <img src={fotos[index].urls.regular} alt={fotos[index].alt_description} className="img-fluid rounded-start style-image" />
                         </div>
@@ -57,7 +65,7 @@ const CardView = ({ imagen, setImage }) => {
                         <div className="col-md-3">
                             <div className="card-body">
                                 <h5 className="card-title">
-                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) => (<span key={tags.title} onClick={tagPhotoSearch} className="badge rounded-pill text-bg-warning me-3" style={{ cursor: 'pointer' }}> {tags.title} </span>))}
+                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) => (<span key={tags.title} onClick={() => tagPhotoSearch(tags)} className="badge rounded-pill text-bg-warning me-3" style={{ cursor: 'pointer' }}> {tags.title} </span>))}
                                 </h5>
                                 <p className="card-text">or, sit amet consectetur adipi  </p>
                                 <p className="card-text m-4"><small className="text-body-secondary"> asd

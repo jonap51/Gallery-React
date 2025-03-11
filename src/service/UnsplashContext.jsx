@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useCallback, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 
 // Crear el contexto
 const UnsplashContext = createContext();
@@ -10,19 +10,25 @@ const UnsplashProvider = ({ children }) => {
     const [fotos, setFotos] = useState([])
     const [ingresarBusqueda, setIngresarBusqueda] = useState('')
     const [fotoId, setFotoId] = useState([])
+
     const [pageNumber, setPageNumber] = useState(1)
     const [boleanInfinite, setBoleanInfinite] = useState(false)
 
-
     //key de Unsplash
     const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+    //const keyRandomTag = process.env.REACT_RANDOM_AND_TAGS_ACCESS_KEY;
+
+    console.log(ingresarBusqueda, 'tag recibidoAFUERA del CONTEXT')
 
     //Función para buscar fotos
     const getRandom = useCallback(async () => {
         try {
-            const response = await axios.get('https://api.unsplash.com/photos/random?count=28', {
+            const response = await axios.get('https://api.unsplash.com/photos/random', {
                 headers: {
                     Authorization: `Client-ID ${accessKey}`,
+                },
+                params: {
+                    count: 28,
                 },
             })
             setFotos(response.data)
@@ -32,30 +38,6 @@ const UnsplashProvider = ({ children }) => {
             console.error(e)
         }
     }, [accessKey])
-
-    //Función para buscar fotos
-
-    const searchPhotos = async () => {
-        try {
-            const response = await axios(`https://api.unsplash.com/search/photos?page=${pageNumber}&query=${ingresarBusqueda}&per_page=28`, {
-                headers: {
-                    Authorization: `Client-ID ${accessKey}`,
-                },
-            });
-            const data = response.data.results
-            setBoleanInfinite(true)
-
-            //Si la página es 1, se guarda en 'fotos', sino se agrega el nuevo array a 'fotos'
-            if (pageNumber === 1) {
-                setFotos(data)
-            } else {
-                setFotos((prevFotos) => [...prevFotos, ...data]);
-            }
-
-        } catch (error) {
-            console.error("Error fetching search photos:", error);
-        }
-    }
 
 
     // Función para obtener una foto por ID
@@ -74,20 +56,65 @@ const UnsplashProvider = ({ children }) => {
         }
     }
 
+
+    // Función para actualizar ingresarBusqueda y luego llamar a searchPhotos
+    const updateIngresarBusquedaAndSearch = (newSearch) => {
+        setIngresarBusqueda(newSearch); // Actualiza el estado
+        console.log(newSearch, 'recibo el jodido TAG')
+
+        console.log(ingresarBusqueda, 'recibo el jodido TAG INGRESAR BUSQUEDA')
+    }
+
+
+    //Función para buscar fotos
+    useEffect(() => {
+        const searchPhotos = async () => {
+            try {
+                const response = await axios('https://api.unsplash.com/search/photos', {
+                    headers: {
+                        Authorization: `Client-ID ${accessKey}`,
+                    },
+                    params: {
+                        page: pageNumber,
+                        query: ingresarBusqueda,
+                        per_page: 28,
+                    },
+                });
+                const data = response.data.results
+                setBoleanInfinite(true)
+
+                console.log(ingresarBusqueda, 'tag ADENTRO de la funcion SEARCH del CONTEXT')
+
+                //Si la página es 1, se guarda en 'fotos', sino se agrega el nuevo array a 'fotos'
+                if (pageNumber === 1) {
+                    setFotos(data)
+                } else {
+                    setFotos((prevFotos) => [...prevFotos, ...data]);
+                }
+
+            } catch (error) {
+                console.error("Error fetching search photos:", error);
+            }
+        }
+        searchPhotos()
+    }, [ingresarBusqueda, pageNumber])
+
+
+
+
     // Valores que se compartirán
     const value = {
         fotos,
         getRandom,
         setIngresarBusqueda,
         setFotos,
-        searchPhotos,
+        //searchPhotos,
         boleanInfinite,
         setPageNumber,
         pageNumber,
         photoById,
-        fotoId
-
-
+        fotoId,
+        updateIngresarBusquedaAndSearch
     };
 
     return (
@@ -97,4 +124,4 @@ const UnsplashProvider = ({ children }) => {
     )
 }
 
-export { UnsplashContext, UnsplashProvider };
+export { UnsplashContext, UnsplashProvider }

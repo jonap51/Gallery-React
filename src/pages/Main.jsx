@@ -21,11 +21,11 @@ const Main = () => {
     };
 
 
-    useEffect(() => {
-        if (pageNumber > 1) {
-            searchPhotos()
-        }
-    }, [pageNumber]);
+    /* useEffect(() => {
+         if (pageNumber > 1) {
+             searchPhotos()
+         }
+     }, [pageNumber]);*/
 
     return (
         <div>
@@ -39,9 +39,7 @@ const Main = () => {
 
                     {fotos.map((ft) => (
                         <img key={ft.id} src={ft.urls.small_s3} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />
-
                     ))}
-
                 </div>
             </InfiniteScroll>
             {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} />}
