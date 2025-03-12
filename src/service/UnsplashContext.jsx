@@ -18,8 +18,6 @@ const UnsplashProvider = ({ children }) => {
     const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
     //const keyRandomTag = process.env.REACT_RANDOM_AND_TAGS_ACCESS_KEY;
 
-    console.log(ingresarBusqueda, 'tag recibidoAFUERA del CONTEXT')
-
     //Función para buscar fotos
     const getRandom = useCallback(async () => {
         try {
@@ -60,9 +58,7 @@ const UnsplashProvider = ({ children }) => {
     // Función para actualizar ingresarBusqueda y luego llamar a searchPhotos
     const updateIngresarBusquedaAndSearch = (newSearch) => {
         setIngresarBusqueda(newSearch); // Actualiza el estado
-        console.log(newSearch, 'recibo el jodido TAG')
         setPageNumber(1)
-        console.log(ingresarBusqueda, 'recibo el jodido TAG INGRESAR BUSQUEDA')
     }
 
 
@@ -82,8 +78,6 @@ const UnsplashProvider = ({ children }) => {
                 });
                 const data = response.data.results
                 setBoleanInfinite(true)
-
-                console.log(ingresarBusqueda, 'tag ADENTRO de la funcion SEARCH del CONTEXT')
 
                 //Si la página es 1, se guarda en 'fotos', sino se agrega el nuevo array a 'fotos'
                 if (pageNumber === 1) {
