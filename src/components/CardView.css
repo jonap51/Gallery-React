@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(105, 105, 105, 0.8);
-    height: 100vh;
     position: fixed;
     left: 0;
     right: 0;
@@ -13,9 +12,6 @@
     backdrop-filter: blur(2px);
 }
 
-.style-image {
-    width: 95%;
-    height: 90vh;
-    object-fit: cover;
-    margin: 20px;
+h2 {
+    font-size: 1.2rem;
 }

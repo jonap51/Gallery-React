@@ -63,6 +63,7 @@ const UnsplashProvider = ({ children }) => {
 
 
     //Función para buscar fotos
+
     useEffect(() => {
         const searchPhotos = async () => {
             try {
@@ -102,7 +103,6 @@ const UnsplashProvider = ({ children }) => {
         getRandom,
         setIngresarBusqueda,
         setFotos,
-        //searchPhotos,
         boleanInfinite,
         setPageNumber,
         pageNumber,

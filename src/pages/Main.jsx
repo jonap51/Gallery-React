@@ -9,7 +9,7 @@ import './Main.css'
 const Main = () => {
     const { getRandom, fotos, boleanInfinite, pageNumber, setPageNumber } = useContext(UnsplashContext);
     const [imageHidden, setImageHidden] = useState(null)
-
+    const galeria = document.querySelector('.gallery');
 
 
     useEffect(() => {
@@ -18,6 +18,7 @@ const Main = () => {
 
     const mostrarImagen = (ft) => {
         setImageHidden(ft);
+        galeria.classList.add('bloqueado');
     };
 
     return (
@@ -28,7 +29,7 @@ const Main = () => {
                 hasMore={boleanInfinite}
                 loader={<h4>Loading...</h4>}
             >
-                <div className='gallery justify-content-center'>
+                <div className='gallery justify-content-center '>
 
                     {fotos.map((ft) => (
                         <img key={ft.id} src={ft.urls.small_s3} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />

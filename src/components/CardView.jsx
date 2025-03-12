@@ -38,27 +38,46 @@ const CardView = ({ imagen, setImage }) => {
         updateIngresarBusquedaAndSearch(tags.title)
         setImage(null);
     }
+    console.log(fotoId)
+
+
+
+    const dateString = fotoId.created_at
+    const date = new Date(dateString);
+    // Formatear toda la fecha automáticamente
+    const fechaFormateada = date.toLocaleDateString('es-ES', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
+
 
     return (
 
-        <div id="carouselExample" className="carousel slide">
+        <div className="carousel slide">
             <div className='display-zoom' onClick={ocultar}>
-                <div className="card mb-3 container" style={{ width: '100%', objectPosition: 'center' }}>
+                <div className="card  " style={{ width: '70%', height: '95%' }}>
                     <div className="row g-0">
-                        <div className="col-md-9 vh75">
-                            <img src={fotos[index].urls.regular} alt={fotos[index].alt_description} className="img-fluid rounded-start style-image" />
+                        <div className="g-col-6 " >
+                            <img src={fotos[index].urls.regular} alt={fotos[index].alt_description} className=" rounded object-fit-cover container " />
                         </div>
 
 
-                        <div className="col-md-3">
+                        <div className="g-col-6">
                             <div className="card-body">
-                                <h5 className="card-title">
-                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) => (<span key={tags.title} onClick={() => tagPhotoSearch(tags)} className="badge rounded-pill text-bg-warning me-3" style={{ cursor: 'pointer' }}> {tags.title} </span>))}
-                                </h5>
-                                <p className="card-text">or, sit amet consectetur adipi  </p>
-                                <p className="card-text m-4"><small className="text-body-secondary"> asd
-                                </small></p>
-                                <p className="card-text"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, ullam! Ut, delectus, ratione placeat, dignissimos consectetur aliquam labore expedita harum veniam tenetur quis rem? Iusto eveniet aperiam soluta eligendi molestiae?</p>
+
+                                <p className="card-text mt-4"> Fecha de creación : {fechaFormateada}</p>
+                                <p className="card-text">{fotoId.description} </p>
+                                <p className="card-text" ><i class="bi bi-camera me-2"></i>
+
+                                    <small className="text-body-secondary">{fotoId.exif.name}
+                                    </small></p>
+
+                                <h2 className="card-title">
+                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) => (<span key={tags.title} onClick={() => tagPhotoSearch(tags)} className="badge rounded-pill text-bg-secondary m-1" style={{ cursor: 'pointer' }}> {tags.title} </span>))}
+                                </h2>
+
+
                             </div>
                         </div>
                     </div>
