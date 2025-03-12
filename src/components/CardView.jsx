@@ -70,7 +70,7 @@ const CardView = ({ imagen, setImage }) => {
                                 <p className="card-text">{fotoId.description} </p>
                                 <p className="card-text" ><i class="bi bi-camera me-2"></i>
 
-                                    <small className="text-body-secondary">{fotoId.exif.name}
+                                    <small className="text-body-secondary">{fotoId.exif && fotoId.exif.name}
                                     </small></p>
 
                                 <h2 className="card-title">

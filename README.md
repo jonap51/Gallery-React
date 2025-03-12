@@ -18,4 +18,4 @@ En este proyecto crearé una GALERIA DE IMÁGENES usando React.
 
 - Tenia 2 opciones, realizar la llamada de la api desde el CardView, o de antes  (Main) al clickear una imagen, pero si lo realizaba de Main luego cuando este dentro de CardView tambien tengo otros 2 botones, entonces deberia realizar una busqueda al clickear cada botón, eso quiere decir que debia volver a escribir codigo en cada botón. Por eso decidí llamar una sola vez a la api desde CardView, y que desde ahi que capture el ID de la imagen que se muestra para obtener sus tags y cualquier otra info. Dando como resultado 1 sola llamada y no tener codigo repetido en cada botón.
 
-![Flamenco traido de api Unsplash](/flamencos.png)
+![Flamenco traido de api Unsplash](/public/flamencos.png)
