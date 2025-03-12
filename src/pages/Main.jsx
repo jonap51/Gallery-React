@@ -7,7 +7,7 @@ import './Main.css'
 
 
 const Main = () => {
-    const { getRandom, fotos, boleanInfinite, searchPhotos, pageNumber, setPageNumber } = useContext(UnsplashContext);
+    const { getRandom, fotos, boleanInfinite, pageNumber, setPageNumber } = useContext(UnsplashContext);
     const [imageHidden, setImageHidden] = useState(null)
 
 
@@ -19,13 +19,6 @@ const Main = () => {
     const mostrarImagen = (ft) => {
         setImageHidden(ft);
     };
-
-
-    /* useEffect(() => {
-         if (pageNumber > 1) {
-             searchPhotos()
-         }
-     }, [pageNumber]);*/
 
     return (
         <div>

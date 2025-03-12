@@ -1,12 +1,11 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import './CardView.css'
 import { UnsplashContext } from "../service/UnsplashContext";
 
 const CardView = ({ imagen, setImage }) => {
-    const { fotos, photoById, fotoId, setIngresarBusqueda, ingresarBusqueda, searchPhotos, updateIngresarBusquedaAndSearch } = useContext(UnsplashContext)
+    const { fotos, photoById, fotoId, updateIngresarBusquedaAndSearch } = useContext(UnsplashContext)
 
     const [index, setIndex] = useState(fotos.indexOf(imagen))
-    const [tituloTag, setTituloTag] = useState(null)
 
     //cerrar Card View con la tecla ESC
     useEffect(() => {
@@ -33,23 +32,12 @@ const CardView = ({ imagen, setImage }) => {
 
     }, [index])
 
-
-
     // Función para manejar la búsqueda por tag
 
     const tagPhotoSearch = (tags) => {
         updateIngresarBusquedaAndSearch(tags.title)
         setImage(null);
-        console.log(tags.title, ' tag DENTRO del click CARD')
-
     }
-
-
-
-
-    console.log(ingresarBusqueda, 'tag AFUERA del click CARD')
-
-
 
     return (
 

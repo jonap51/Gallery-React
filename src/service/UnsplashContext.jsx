@@ -61,7 +61,7 @@ const UnsplashProvider = ({ children }) => {
     const updateIngresarBusquedaAndSearch = (newSearch) => {
         setIngresarBusqueda(newSearch); // Actualiza el estado
         console.log(newSearch, 'recibo el jodido TAG')
-
+        setPageNumber(1)
         console.log(ingresarBusqueda, 'recibo el jodido TAG INGRESAR BUSQUEDA')
     }
 
