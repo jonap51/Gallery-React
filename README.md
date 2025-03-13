@@ -4,9 +4,21 @@ En este proyecto crearé una GALERIA DE IMÁGENES usando React.
 
 ## ¿Que uso?.
 
-1. Bootstrap
-2. Unsplash API 
-3. quis aperiam repellat iste dolores fugiat sed eveniet soluta accusamus modi beatae.
+1. Hooks
+    - useState
+    - useEffects
+    - useContext  
+2. Bootstrap 
+3. HeroUI/Tailwind
+4. HeroIcons
+3. Unsplash API
+4. Github Secrets
+5. Workflows/Actions
+6. Gh-Pages
+7. npm *Infinite Scroll* https://www.npmjs.com/package/react-infinite-scroll-component#react-infinite-scroll-component--
+8. npm *Axios* https://axios-http.com/docs/intro
+
+
 
 ### Cambios que se fueron realizando.
 

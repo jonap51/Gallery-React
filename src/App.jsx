@@ -1,10 +1,14 @@
 import './App.css'
-//import { CardView } from './components/CardView';
 import { Header } from './components/Header';
+import { Test } from './components/test';
 import { Main } from './pages/Main';
 import { UnsplashProvider } from './service/UnsplashContext';
 
 function App() {
+
+  /*
+    <Test />
+*/
   return (
     <div>
 
@@ -12,7 +16,6 @@ function App() {
         <Header />
         <Main />
       </UnsplashProvider>
-
     </div>
   );
 }

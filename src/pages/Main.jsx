@@ -4,25 +4,20 @@ import { UnsplashContext } from '../service/UnsplashContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './Main.css'
 
-
-
 const Main = () => {
     const { getRandom, fotos, boleanInfinite, pageNumber, setPageNumber } = useContext(UnsplashContext);
     const [imageHidden, setImageHidden] = useState(null)
-    const galeria = document.querySelector('.gallery');
-
 
     useEffect(() => {
         getRandom()
-    }, [getRandom])
+    }, [])
 
     const mostrarImagen = (ft) => {
         setImageHidden(ft);
-        galeria.classList.add('bloqueado');
     };
 
     return (
-        <div>
+        <div >
             <InfiniteScroll
                 dataLength={fotos.length}
                 next={() => setPageNumber(pageNumber + 1)}
@@ -30,9 +25,13 @@ const Main = () => {
                 loader={<h4>Loading...</h4>}
             >
                 <div className='gallery justify-content-center '>
-
                     {fotos.map((ft) => (
-                        <img key={ft.id} src={ft.urls.small_s3} alt={ft.alt_description} onClick={() => mostrarImagen(ft)} />
+                        <img
+                            key={ft.id}
+                            src={ft.urls.small_s3}
+                            alt={ft.alt_description}
+                            onClick={() => mostrarImagen(ft)}
+                        />
                     ))}
                 </div>
             </InfiniteScroll>

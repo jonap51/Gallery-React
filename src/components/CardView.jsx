@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import './CardView.css'
 import { UnsplashContext } from "../service/UnsplashContext";
+import { Button } from "@heroui/button";
+import { CursorArrowRaysIcon, CalendarDaysIcon, CameraIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
 
 const CardView = ({ imagen, setImage }) => {
     const { fotos, photoById, fotoId, updateIngresarBusquedaAndSearch } = useContext(UnsplashContext)
-
     const [index, setIndex] = useState(fotos.indexOf(imagen))
 
     //cerrar Card View con la tecla ESC
@@ -33,16 +34,17 @@ const CardView = ({ imagen, setImage }) => {
     }, [index])
 
     // Función para manejar la búsqueda por tag
-
     const tagPhotoSearch = (tags) => {
-        updateIngresarBusquedaAndSearch(tags.title)
-        setImage(null);
+        setTimeout(() => {
+            setImage(null);
+            updateIngresarBusquedaAndSearch(tags.title)
+        }, 700);//retraso para visualizar la animación del boton
     }
-    console.log(fotoId)
-
 
 
     const dateString = fotoId.created_at
+
+
     const date = new Date(dateString);
     // Formatear toda la fecha automáticamente
     const fechaFormateada = date.toLocaleDateString('es-ES', {
@@ -52,31 +54,52 @@ const CardView = ({ imagen, setImage }) => {
     });
 
 
+    /* className="badge rounded-pill text-bg-secondary m-1 chip-flat" style={{ cursor: 'pointer' }} */
     return (
 
         <div className="carousel slide">
             <div className='display-zoom' onClick={ocultar}>
-                <div className="card  " style={{ width: '70%', height: '95%' }}>
-                    <div className="row g-0">
-                        <div className="g-col-6 " >
-                            <img src={fotos[index].urls.regular} alt={fotos[index].alt_description} className=" rounded object-fit-cover container " />
+                <div className="card  w-75" style={{ height: '90%' }}>
+                    <div className="flex-row ">
+                        <div className="">
+                            <img className="rounded-lg object-contain "
+                                src={fotos[index].urls.regular}
+                                alt={fotos[index].alt_description}
+
+                            />
                         </div>
 
 
-                        <div className="g-col-6">
+                        <div className=" ">
                             <div className="card-body">
-
-                                <p className="card-text mt-4"> Fecha de creación : {fechaFormateada}</p>
-                                <p className="card-text">{fotoId.description} </p>
-                                <p className="card-text" ><i class="bi bi-camera me-2"></i>
-
-                                    <small className="text-body-secondary">{fotoId.exif && fotoId.exif.name}
-                                    </small></p>
-
-                                <h2 className="card-title">
-                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) => (<span key={tags.title} onClick={() => tagPhotoSearch(tags)} className="badge rounded-pill text-bg-secondary m-1" style={{ cursor: 'pointer' }}> {tags.title} </span>))}
+                                <p className="card-text flex mt-2 ">
+                                    <CalendarDaysIcon className="h-5 w-5 me-1" />
+                                    Fecha de creación : {fechaFormateada}
+                                </p>
+                                <p className="card-text flex mt-2 ">
+                                    <DocumentTextIcon className="h-5 w-5 me-1" />
+                                    {fotoId.description}
+                                </p>
+                                <p className="card-text flex mt-2 " >
+                                    <CameraIcon className="h-5 w-5 me-1" />
+                                    <small className="text-body-secondary">
+                                        {fotoId.exif && fotoId.exif.name}
+                                    </small>
+                                </p>
+                                <h2 className="card-title  mt-4 ">
+                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) =>
+                                    (<Button
+                                        className="m-1 cursor-pointer"
+                                        radius="full" color="danger"
+                                        size="sm"
+                                        variant="flat"
+                                        key={tags.title}
+                                        onPress={() => tagPhotoSearch(tags)}
+                                    >
+                                        <CursorArrowRaysIcon className="h-4 w-4" />
+                                        {tags.title}
+                                    </Button>))}
                                 </h2>
-
 
                             </div>
                         </div>
