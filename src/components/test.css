@@ -1,21 +1,3 @@
-.display-zoom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(105, 105, 105, 0.8);
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    backdrop-filter: blur(2px);
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-
 @media (max-width: 799px) {
     .responsive-row {
         flex-direction: row;

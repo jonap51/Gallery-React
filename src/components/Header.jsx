@@ -31,9 +31,9 @@ const Header = () => {
     return (
         <div>
             <h1 className='p-3 bg-danger text-white container-full text-center'>Galeria de Imágenes</h1>
-            <div className='d-flex container mt-5 mb-5'>
-                <input className="form-control me-3 border-1 border-black" type="search" placeholder="Search" aria-label="Search" value={captura} onChange={actualizarBusqueda} onKeyDown={searchKeyEnter} />
-                <button className="btn btn-outline-success" onClick={searchPhotosClick}>Search</button>
+            <div className='d-flex container my-5'>
+                <input className="form-control m-5 border-1 border-black" type="search" placeholder="Search" aria-label="Search" value={captura} onChange={actualizarBusqueda} onKeyDown={searchKeyEnter} />
+                <button className="btn btn-outline-success my-5 px-4" onClick={searchPhotosClick}>Search</button>
             </div>
         </div>
     )

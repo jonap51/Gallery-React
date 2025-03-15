@@ -27,6 +27,11 @@ const CardView = ({ imagen, setImage }) => {
             setImage(null)
         }
     }
+
+
+    function asd() {
+        setImage(null)
+    }
     //obtiene los tags de la foto en el CardView
     useEffect(() => {
         photoById(fotos[index].id)
@@ -53,20 +58,27 @@ const CardView = ({ imagen, setImage }) => {
 
     console.log(fotos[index].urls);
 
-    /* className="badge rounded-pill text-bg-secondary m-1 chip-flat" style={{ cursor: 'pointer' }} */
     return (
 
         <div className="carousel slide">
             <div className='display-zoom' onClick={ocultar}>
-                <div className="card" style={{ width: '80%', height: '100% ' }}>
-                    <div className="row row-cols-2  w-100 h-100 ">
+                <div className="card mt-3" style={{ width: '80%', height: '100% ' }}>
+                    <div className="row row-cols-2  w-100 h-100 responsive-row">
                         <div className="col-10  overflow-hidden h-65 w-75">
+                            <span
+                                class="position-absolute 
+                                start-100 top-0 
+                                translate-middle 
+                                badge 
+                                rounded-pill 
+                                bg-danger"
+                                onClick={ocultar}
+                            >
+                                <i class="bi bi-x-lg"></i>
+                            </span>
                             <img className="rounded-lg object-fit-cover w-100 h-100 "
                                 src={fotos[index].urls.regular}
                                 alt={fotos[index].alt_description}
-
-
-
                             />
                         </div>
 
@@ -113,7 +125,7 @@ const CardView = ({ imagen, setImage }) => {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
+                <button className="carousel-control-prev m-0 p-0" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
                     disabled={index === 0 ? 'disabled' : ''} onClick={() => setIndex(index - 1)}>
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>

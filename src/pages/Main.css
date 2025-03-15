@@ -1,15 +1,11 @@
-.fondo-scroll-bloqueado {
-    overflow: hidden;
-}
-
 .gallery {
-    --size: 120px;
+    --size: 130px;
     display: grid;
-    grid-template-columns: repeat(12, var(--size));
     grid-auto-rows: var(--size);
     margin-bottom: var(--size);
     place-items: start center;
-    gap: 15px;
+    row-gap: 20px;
+
 
     &:has(:hover) img:not(:hover),
     &:has(:focus) img:not(:focus) {
@@ -20,11 +16,11 @@
         object-fit: cover;
         width: calc(var(--size) * 2);
         height: calc(var(--size) * 2);
-        clip-path: path("M108,12 C120,0 120,0 132,12 228,108 228,108 228,108 240,120 240,120 228,132 228,132 132,228 132,228 120,240 120,240 108,228 108,228 12,132 12,132 0,120 0,120 12,108Z");
         transition: clip-path 0.25s, filter 0.75s;
         grid-column: auto / span 2;
         border-radius: 5px;
         cursor: pointer;
+        clip-path: path("M116.64,12.96 C129.6,0 129.6,0 142.56,12.96 246.24,116.64 246.24,116.64 246.24,116.64 259.2,129.6 259.2,129.6 246.24,142.56 246.24,142.56 142.56,246.24 142.56,246.24 129.6,259.2 129.6,259.2 116.64,246.24 116.64,246.24 12.96,142.56 12.96,142.56 0,129.6 0,129.6 12.96,116.64Z");
 
 
 
@@ -44,7 +40,13 @@
 
     /*Media Queries*/
     @media (min-width: 1601px) {
+        --size: 130px;
+        grid-template-columns: repeat(12, var(--size));
+        gap: 20px;
+
+
         & img {
+
             &:nth-child(11n +7) {
                 grid-column: 2 / span 2
             }
@@ -52,10 +54,14 @@
     }
 
 
-    @media (max-width: 1600px) and (min-width: 1201px) {
+
+    @media (max-width: 1600px) and (min-width: 1241px) {
         grid-template-columns: repeat(10, minmax(105px, 1fr));
 
+
         & img {
+            clip-path: path("M108,12 C120,0 120,0 132,12 228,108 228,108 228,108 240,120 240,120 228,132 228,132 132,228 132,228 120,240 120,240 108,228 108,228 12,132 12,132 0,120 0,120 12,108Z");
+
             &:nth-child(9n +6) {
                 grid-column: 2 / span 2
             }
@@ -64,19 +70,22 @@
 
 
 
-    @media (max-width: 1200px)and (min-width: 920px) {
-        grid-template-columns: repeat(8, minmax(103px, 1fr));
+    @media (max-width: 1240px)and (min-width: 1011px) {
+        grid-template-columns: repeat(8, minmax(100px, 1fr));
 
         & img {
+            clip-path: path("M108,12 C120,0 120,0 132,12 228,108 228,108 228,108 240,120 240,120 228,132 228,132 132,228 132,228 120,240 120,240 108,228 108,228 12,132 12,132 0,120 0,120 12,108Z");
+
             &:nth-child(7n + 5) {
                 grid-column: 2 / span 2;
             }
         }
     }
 
-    @media (max-width: 919px)and (min-width: 641px) {
+    @media (max-width: 1010px)and (min-width: 681px) {
         --size: 80px;
-        grid-template-columns: repeat(8, minmax(65px, 1fr));
+        grid-template-columns: repeat(8, minmax(5px, 1fr));
+
 
         & img {
             clip-path: path("M72,8 C80,0 80,0 88,8 152,72 152,72 152,72 160,80 160,80 152,88 152,88 88,152 88,152 80,160 80,160 72,152 72,152 8,88 8,88 0,80 0,80 8,72Z");
@@ -87,9 +96,10 @@
         }
     }
 
-    @media (max-width: 640px)and (min-width: 451px) {
+    @media (max-width: 680px)and (min-width: 471px) {
         --size: 80px;
         grid-template-columns: repeat(6, minmax(35px, 1fr));
+
 
         & img {
             clip-path: path("M72,8 C80,0 80,0 88,8 152,72 152,72 152,72 160,80 160,80 152,88 152,88 88,152 88,152 80,160 80,160 72,152 72,152 8,88 8,88 0,80 0,80 8,72Z");
@@ -101,9 +111,9 @@
     }
 
 
-    @media (max-width: 450px) {
+    @media (max-width: 470px) {
         --size: 50px;
-        grid-template-columns: repeat(6, minmax(35px, 1fr));
+        grid-template-columns: repeat(6, minmax(55px, 1fr));
 
         & img {
             clip-path: path("M45,5 C50,0 50,0 55,5 95,45 95,45 95,45 100,50 100,50 95,55 95,55 55,95 55,95 50,100 50,100 45,95 45,95 5,55 5,55 0,50 0,50 5,45Z");

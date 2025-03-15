@@ -17,7 +17,7 @@ const Main = () => {
     };
 
     return (
-        <div >
+        <div className='mt-5'>
             <InfiniteScroll
                 dataLength={fotos.length}
                 next={() => setPageNumber(pageNumber + 1)}
