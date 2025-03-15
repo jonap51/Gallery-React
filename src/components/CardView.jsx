@@ -43,8 +43,6 @@ const CardView = ({ imagen, setImage }) => {
 
 
     const dateString = fotoId.created_at
-
-
     const date = new Date(dateString);
     // Formatear toda la fecha automáticamente
     const fechaFormateada = date.toLocaleDateString('es-ES', {
@@ -53,26 +51,29 @@ const CardView = ({ imagen, setImage }) => {
         year: 'numeric'
     });
 
+    console.log(fotos[index].urls);
 
     /* className="badge rounded-pill text-bg-secondary m-1 chip-flat" style={{ cursor: 'pointer' }} */
     return (
 
         <div className="carousel slide">
             <div className='display-zoom' onClick={ocultar}>
-                <div className="card  w-75" style={{ height: '90%' }}>
-                    <div className="flex-row ">
-                        <div className="">
-                            <img className="rounded-lg object-contain "
+                <div className="card" style={{ width: '80%', height: '100% ' }}>
+                    <div className="row row-cols-2  w-100 h-100 ">
+                        <div className="col-10  overflow-hidden h-65 w-75">
+                            <img className="rounded-lg object-fit-cover w-100 h-100 "
                                 src={fotos[index].urls.regular}
                                 alt={fotos[index].alt_description}
+
+
 
                             />
                         </div>
 
 
-                        <div className=" ">
+                        <div className="col-2 h-100 w-25 m-0 p-0 ">
                             <div className="card-body">
-                                <p className="card-text flex mt-2 ">
+                                <p className="card-text d-flex mt-2 ">
                                     <CalendarDaysIcon className="h-5 w-5 me-1" />
                                     Fecha de creación : {fechaFormateada}
                                 </p>
