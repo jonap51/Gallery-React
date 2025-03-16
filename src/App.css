@@ -11,3 +11,8 @@ h1 {
     font-size: 3em;
     font-weight: 700;
 }
+
+.bloquear {
+    overflow: hidden;
+    height: 100vh;
+}

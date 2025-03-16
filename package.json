@@ -51,7 +51,12 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.22.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.4",
     "gh-pages": "^6.3.0",
+    "globals": "^16.0.0",
     "tailwindcss": "^3.4.17"
   }
 }

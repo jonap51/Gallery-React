@@ -4,15 +4,19 @@ import { UnsplashContext } from "../service/UnsplashContext";
 import { Button } from "@heroui/button";
 import { CursorArrowRaysIcon, CalendarDaysIcon, CameraIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
 
-const CardView = ({ imagen, setImage }) => {
+
+
+const CardView = ({ imagen, setImage, bloquear }) => {
     const { fotos, photoById, fotoId, updateIngresarBusquedaAndSearch } = useContext(UnsplashContext)
     const [index, setIndex] = useState(fotos.indexOf(imagen))
 
+    //--CERRAR CARDVIEW--//
     //cerrar Card View con la tecla ESC
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === 'Escape') {
-                setImage(null);
+                setImage(null)
+                bloquear(false)
             }
         };
         window.addEventListener('keydown', handleKeyDown);
@@ -21,24 +25,28 @@ const CardView = ({ imagen, setImage }) => {
         };
     }, [setImage]);
 
+    //cerrar Card View al clickear en la CRUZ
+    function close() {
+        setImage(null)
+        bloquear(false)
+    }
+
     //cerrar Card View al clickear afuera de la card
     const ocultar = (event) => {
         if (event.target === event.currentTarget) {
             setImage(null)
+            bloquear(false)
         }
     }
+    //--TERMINA CIERRE DE CARDVIEW--//
 
 
-    function asd() {
-        setImage(null)
-    }
-    //obtiene los tags de la foto en el CardView
+    //obtiene los tags de la foto mostrada y los coloca en el CardView
     useEffect(() => {
         photoById(fotos[index].id)
-
     }, [index])
 
-    // Función para manejar la búsqueda por tag
+    // Función para realizar búsqueda por tag
     const tagPhotoSearch = (tags) => {
         setTimeout(() => {
             setImage(null);
@@ -46,7 +54,13 @@ const CardView = ({ imagen, setImage }) => {
         }, 700);//retraso para visualizar la animación del boton
     }
 
+    // Muestra Tags dependiendo el tamaño de la pantalla
+    let dimensionPantalla = []
+    function widthLess(fotoId) {
+        return window.screen.width < 450 ? dimensionPantalla = fotoId.tags.slice(0, 41) : window.screen.width < 800 ? dimensionPantalla = fotoId.tags.slice(0, 6) : dimensionPantalla = fotoId.tags
+    }
 
+    //Convertir la Fecha
     const dateString = fotoId.created_at
     const date = new Date(dateString);
     // Formatear toda la fecha automáticamente
@@ -56,32 +70,28 @@ const CardView = ({ imagen, setImage }) => {
         year: 'numeric'
     });
 
-    console.log(fotos[index].urls);
-
     return (
-
         <div className="carousel slide">
             <div className='display-zoom' onClick={ocultar}>
                 <div className="card mt-3" style={{ width: '80%', height: '100% ' }}>
                     <div className="row row-cols-2  w-100 h-100 responsive-row">
                         <div className="col-10  overflow-hidden h-65 w-75">
                             <span
-                                class="position-absolute 
+                                className="position-absolute 
                                 start-100 top-0 
                                 translate-middle 
                                 badge 
                                 rounded-pill 
                                 bg-danger"
-                                onClick={ocultar}
+                                onClick={close}
                             >
-                                <i class="bi bi-x-lg"></i>
+                                <i className="bi bi-x-lg"></i>
                             </span>
                             <img className="rounded-lg object-fit-cover w-100 h-100 "
                                 src={fotos[index].urls.regular}
                                 alt={fotos[index].alt_description}
                             />
                         </div>
-
 
                         <div className="col-2 h-100 w-25 m-0 p-0 ">
                             <div className="card-body">
@@ -99,8 +109,9 @@ const CardView = ({ imagen, setImage }) => {
                                         {fotoId.exif && fotoId.exif.name}
                                     </small>
                                 </p>
+                                { /*Aquí se obtienen los tags*/}
                                 <h2 className="card-title  mt-4 ">
-                                    {fotoId && fotoId.tags && fotoId.tags.map((tags) =>
+                                    {fotoId && fotoId.tags && widthLess(fotoId).map((tags) =>
                                     (<Button
                                         className="m-1 cursor-pointer"
                                         radius="full" color="danger"

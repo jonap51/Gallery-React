@@ -1,3 +1,4 @@
+import { useContext, useRef, useState } from 'react';
 import './App.css'
 import { Header } from './components/Header';
 import { Test } from './components/test';
@@ -6,18 +7,20 @@ import { UnsplashProvider } from './service/UnsplashContext';
 
 function App() {
 
-  /*
 
+  const [classBloquear, setClassBloquear] = useState(false);
+
+  /*
      <Test />
 */
   return (
-    <div>
-
-      <UnsplashProvider>
+    <UnsplashProvider  >
+      <div className={classBloquear ? 'bloquear' : ''} >
         <Header />
-        <Main />
-      </UnsplashProvider>
-    </div>
+        <Main bloquear={setClassBloquear} />
+      </div >
+    </UnsplashProvider>
+
   );
 }
 

@@ -4,7 +4,7 @@ import { UnsplashContext } from '../service/UnsplashContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './Main.css'
 
-const Main = () => {
+const Main = ({ bloquear }) => {
     const { getRandom, fotos, boleanInfinite, pageNumber, setPageNumber } = useContext(UnsplashContext);
     const [imageHidden, setImageHidden] = useState(null)
 
@@ -14,17 +14,18 @@ const Main = () => {
 
     const mostrarImagen = (ft) => {
         setImageHidden(ft);
+        bloquear(true)
     };
 
     return (
-        <div className='mt-5'>
+        <div className='mt-5 '>
             <InfiniteScroll
                 dataLength={fotos.length}
                 next={() => setPageNumber(pageNumber + 1)}
                 hasMore={boleanInfinite}
                 loader={<h4>Loading...</h4>}
             >
-                <div className='gallery justify-content-center '>
+                <div className='gallery justify-content-center  '>
                     {fotos.map((ft) => (
                         <img
                             key={ft.id}
@@ -35,7 +36,7 @@ const Main = () => {
                     ))}
                 </div>
             </InfiniteScroll>
-            {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} />}
+            {imageHidden && <CardView imagen={imageHidden} setImage={setImageHidden} bloquear={bloquear} />}
 
         </div>
     )

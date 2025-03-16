@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useRef, useState } from 'react';
 
 // Crear el contexto
 const UnsplashContext = createContext();
@@ -95,9 +95,7 @@ const UnsplashProvider = ({ children }) => {
 
     //si no es su primera carga, comienza por random, sino puede ejecutarse searchPhoto por alguna dependencia
     useEffect(() => {
-
         !isFirstRender ? searchPhotos() : setIsFirstRender(false)
-
     }, [pageNumber, ingresarBusqueda])
 
     // Valores que se compartirán
