@@ -77,7 +77,10 @@ const CardView = ({ imagen, setImage, bloquear }) => {
                     <div className="row row-cols-2  w-100 h-100 responsive-row">
                         <div className="col-10  overflow-hidden h-65 w-75">
                             <span
-                                className="position-absolute 
+                                className="
+                                link-light
+                                cursor-pointer
+                                position-absolute 
                                 start-100 top-0 
                                 translate-middle 
                                 badge 
@@ -85,7 +88,7 @@ const CardView = ({ imagen, setImage, bloquear }) => {
                                 bg-danger"
                                 onClick={close}
                             >
-                                <i className="bi bi-x-lg"></i>
+                                <i className="bi bi-x-lg  "></i>
                             </span>
                             <img className="rounded-lg object-fit-cover w-100 h-100 "
                                 src={fotos[index].urls.regular}
@@ -97,16 +100,21 @@ const CardView = ({ imagen, setImage, bloquear }) => {
                             <div className="card-body">
                                 <p className="card-text d-flex mt-2 ">
                                     <CalendarDaysIcon className="h-5 w-5 me-1" />
-                                    Fecha de creación : {fechaFormateada}
+                                    <small className="container-fluid">
+                                        Fecha de creación : {fechaFormateada}
+                                    </small>
                                 </p>
-                                <p className="card-text flex mt-2 ">
+                                <p className="card-text flex  mt-2 ">
                                     <DocumentTextIcon className="h-5 w-5 me-1" />
-                                    {fotoId.description}
+                                    <small className="container-fluid">
+                                        {fotoId.description || 'Sin información'}
+                                    </small>
+
                                 </p>
                                 <p className="card-text flex mt-2 " >
                                     <CameraIcon className="h-5 w-5 me-1" />
-                                    <small className="text-body-secondary">
-                                        {fotoId.exif && fotoId.exif.name}
+                                    <small className="text-body-secondary container-fluid">
+                                        {fotoId.exif && fotoId.exif.name || 'Sin información'}
                                     </small>
                                 </p>
                                 { /*Aquí se obtienen los tags*/}

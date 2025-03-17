@@ -41,3 +41,9 @@ h2 {
         /* Ajustar altura del segundo elemento (card-body) */
     }
 }
+
+.carousel-control-next,
+.carousel-control-prev {
+    /*espacio para que no llegue a los extremos*/
+    margin: 300px 10px;
+}

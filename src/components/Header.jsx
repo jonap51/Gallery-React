@@ -32,8 +32,8 @@ const Header = () => {
         <div>
             <h1 className='p-3 bg-danger text-white container-full text-center'>Galeria de Imágenes</h1>
             <div className='d-flex container my-5'>
-                <input className="form-control m-5 border-1 border-black" type="search" placeholder="Search" aria-label="Search" value={captura} onChange={actualizarBusqueda} onKeyDown={searchKeyEnter} />
-                <button className="btn btn-outline-success my-5 px-4" onClick={searchPhotosClick}>Search</button>
+                <input className="form-control mx-2 border-1 border-black" type="search" placeholder="Search" aria-label="Search" value={captura} onChange={actualizarBusqueda} onKeyDown={searchKeyEnter} />
+                <button className="btn btn-outline-success mx-3 px-3" onClick={searchPhotosClick}>Search</button>
             </div>
         </div>
     )
