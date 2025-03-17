@@ -53,6 +53,7 @@ const CardView = ({ imagen, setImage, bloquear }) => {
     const tagPhotoSearch = (tags) => {
         setTimeout(() => {
             setImage(null);
+            bloquear(false)
             updateIngresarBusquedaAndSearch(tags.title)
         }, 700);//retraso para visualizar la animación del boton
     }
@@ -60,8 +61,6 @@ const CardView = ({ imagen, setImage, bloquear }) => {
     // Muestra Tags dependiendo el tamaño de la pantalla
 
     function widthLess(fotoId) {
-
-
         if (window.innerWidth < 450) {
             return fotoId.tags.slice(0, 3); // Ajusta el número de tags según sea necesario
         } else if (window.innerWidth < 800) {
