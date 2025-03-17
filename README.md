@@ -1,14 +1,17 @@
-# Proyecto "Galeria de Imágenes" Con React
+# Proyecto "Galería de Imágenes" Con React
 
-En este proyecto crearé una GALERIA DE IMÁGENES usando React.
+
+En este proyecto crearé una GALERÍA DE IMÁGENES usando React.
+
 
 ## ¿Que uso?
+
 
 1. Hooks
     - useState
     - useEffects
     - useContext  
-2. Bootstrap 
+2. Bootstrap
 3. HeroUI/Tailwind
 4. HeroIcons
 3. Unsplash API
@@ -19,24 +22,29 @@ En este proyecto crearé una GALERIA DE IMÁGENES usando React.
 8. npm *Axios* https://axios-http.com/docs/intro
 
 
-
 ## Cambios que se fueron realizando
+
 
 - Coloque la opción de cerrar imagen con la tecla ESC. Además de un botón y haciendo click afuera de la tarjeta.
 
-- Podia mantener para todas las imagenes el mismo alto y el mismo ancho fijo, pero eso causaba que como todas las imagenes no tienen las mismas dimensiones, algunas imagenes salgan con la cabeza cortada, o que no se aprecie bien la imagen o lo que queria transmitir el artista en su foto. Asi que me parecio mejor que la imagen respete una altura, y que se ajuste su ancho respectivamente sea necesario para mostrar la imagen completa. Esteticamente en la pagina no queda tan bien, pero la imagen se puede apreciar. Podria tambien ocupar toda la pantalla, pero la idea es que sea un cardView, y que el fondo este difuminado con el blur.
+- Podía mantener para todas las imágenes el mismo alto y el mismo ancho fijo, pero eso causaba que como todas las imágenes no tienen las mismas dimensiones, algunas imágenes salgan con la cabeza cortada, o que no se aprecie bien la imagen o lo que quería transmitir el artista en su foto. Así que me pareció mejor que la imagen respete una altura, y que se ajuste su ancho respectivamente sea necesario para mostrar la imagen completa. Estéticamente en la página no queda tan bien, pero la imagen se puede apreciar. Podría también ocupar toda la pantalla, pero la idea es que sea un cardView, y que el fondo este difuminado con el blur.
 
-- Coloque las funciones la API en un solo lugar y uso 'useContext', ya que iba a tener  componentes con código de llamada de la API, además de estar enviando y recibiendo props  de otros componentes,  me parecio que no iba a ser legible. Asi que obtengo un solo array que lo reemplazo al realizar una busqueda, o por random (al inicio) y me permite reutilizar cualquier dato que tengan las funciones de la API. Decido  crear 'UnsplashContext'.
+- Coloque las funciones la API en un solo lugar y uso 'useContext', ya que iba a tener  componentes con código de llamada de la API, además de estar enviando y recibiendo props  de otros componentes,  me pareció que no iba a ser legible. Así que obtengo un solo array que lo reemplazo al realizar una búsqueda, o por random (al inicio) y me permite reutilizar cualquier dato que tengan las funciones de la API. Decidí  crear 'UnsplashContext'.
 
-- Tenia 2 opciones, realizar la llamada de la api desde el CardView, o de antes  (Main) al clickear una imagen, pero si lo realizaba de Main luego cuando este dentro de CardView tambien tengo otros 2 botones, entonces deberia realizar una busqueda al clickear cada botón, eso quiere decir que debia volver a escribir codigo en cada botón. Por eso decidí llamar una sola vez a la api desde CardView, y que desde ahi que capture el ID de la imagen que se muestra para obtener sus tags y cualquier otra info. Dando como resultado 1 sola llamada y no tener codigo repetido en cada botón.
-
-### Asi va quedando
-![Flamenco traido de api Unsplash](/public/img/flamencos.png)
+- Tenia 2 opciones, realizar la llamada de la api desde el CardView, o de antes  (Main) al clickear una imagen, pero si lo realizaba de Main luego cuando este dentro de CardView tambien tengo otros 2 botones, entonces debería realizar una búsqueda al clickear cada botón, eso quiere decir que debía volver a escribir código en cada botón. Por eso decidí llamar una sola vez a la api desde CardView, y que desde ahí que capture el ID de la imagen que se muestra para obtener sus tags y cualquier otra info. Dando como resultado 1 sola llamada y no tener código repetido en cada botón.
 
 
+### Así va quedando
+![Flamenco traído de api Unsplash](/public/img/flamencos.png)
 
-- Las imagenes del CardView se achicaban al tener una descripcion muy larga, y se arreglo su contenedor para que esto no suceda mas.
 
-- Arregle varios problemas como por ejemplo bootstrap por default se puede interactuar con los botones next y prev extremadamente lejos, impidiendo apretar el boton de "cerra". Achique su tamaño para que no molestara.
+
+- Las imágenes del CardView se achicaban al tener una descripción muy larga, y se arregló su contenedor para que esto no suceda más.
+
+- Arregle varios problemas como por ejemplo bootstrap por default se puede interactuar con los botones next y prev extremadamente lejos, impidiendo apretar el botón de "cerrar". Achiqué su tamaño para que no molestara.
+
+- Ajuste la cantidad de tag que se muestran dependiendo el tamaño de pantalla
+
 
 ![Interacción de botones muy extensa](/public/img/next.png)
+

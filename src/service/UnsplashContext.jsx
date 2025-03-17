@@ -17,7 +17,6 @@ const UnsplashProvider = ({ children }) => {
     const [isFirstRender, setIsFirstRender] = useState(true)
     //key de Unsplash
     const accessKey = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
-    //const keyRandomTag = process.env.REACT_RANDOM_AND_TAGS_ACCESS_KEY;
 
     //Función para buscar fotos
     const getRandom = async () => {

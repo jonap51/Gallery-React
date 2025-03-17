@@ -23,6 +23,9 @@ const CardView = ({ imagen, setImage, bloquear }) => {
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
+        // No queremos que este efecto se vuelva a ejecutar cuando 'bloquear' cambie.
+        // El efecto solo debe ejecutarse cuando 'setImage' cambia.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [setImage]);
 
     //cerrar Card View al clickear en la CRUZ
@@ -55,9 +58,17 @@ const CardView = ({ imagen, setImage, bloquear }) => {
     }
 
     // Muestra Tags dependiendo el tamaño de la pantalla
-    let dimensionPantalla = []
+
     function widthLess(fotoId) {
-        return window.screen.width < 450 ? dimensionPantalla = fotoId.tags.slice(0, 41) : window.screen.width < 800 ? dimensionPantalla = fotoId.tags.slice(0, 6) : dimensionPantalla = fotoId.tags
+
+
+        if (window.innerWidth < 450) {
+            return fotoId.tags.slice(0, 3); // Ajusta el número de tags según sea necesario
+        } else if (window.innerWidth < 800) {
+            return fotoId.tags.slice(0, 6);
+        } else {
+            return fotoId.tags;
+        }
     }
 
     //Convertir la Fecha
@@ -114,7 +125,7 @@ const CardView = ({ imagen, setImage, bloquear }) => {
                                 <p className="card-text flex mt-2 " >
                                     <CameraIcon className="h-5 w-5 me-1" />
                                     <small className="text-body-secondary container-fluid">
-                                        {fotoId.exif && fotoId.exif.name || 'Sin información'}
+                                        {fotoId.exif ? fotoId.exif.name : 'Sin información'}
                                     </small>
                                 </p>
                                 { /*Aquí se obtienen los tags*/}
