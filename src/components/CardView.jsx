@@ -100,7 +100,7 @@ const CardView = ({ imagen, setImage, bloquear }) => {
                             >
                                 <i className="bi bi-x-lg  "></i>
                             </span>
-                            <img className="rounded-lg object-fit-cover w-100 h-100 "
+                            <img className="rounded-lg  object-fit-cover h-full "
                                 src={fotos[index].urls.regular}
                                 alt={fotos[index].alt_description}
                             />
@@ -124,7 +124,7 @@ const CardView = ({ imagen, setImage, bloquear }) => {
                                 <p className="card-text flex mt-2 " >
                                     <CameraIcon className="h-5 w-5 me-1" />
                                     <small className="text-body-secondary container-fluid">
-                                        {fotoId.exif ? fotoId.exif.name : 'Sin información'}
+                                        {fotoId.exif == null ? fotoId.exif.name : 'Sin información'}
                                     </small>
                                 </p>
                                 { /*Aquí se obtienen los tags*/}
