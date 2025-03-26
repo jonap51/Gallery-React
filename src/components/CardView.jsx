@@ -124,7 +124,7 @@ const CardView = ({ imagen, setImage, bloquear }) => {
                                 <p className="card-text flex mt-2 " >
                                     <CameraIcon className="h-5 w-5 me-1" />
                                     <small className="text-body-secondary container-fluid">
-                                        {fotoId.exif == null ? fotoId.exif.name : 'Sin información'}
+                                        {fotoId?.exif?.name || "sin información"}
                                     </small>
                                 </p>
                                 { /*Aquí se obtienen los tags*/}
