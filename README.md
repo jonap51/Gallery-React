@@ -1,12 +1,12 @@
 # Proyecto "Galería de Imágenes" Con React
 
 
-En este proyecto crearé una GALERÍA DE IMÁGENES usando React.
-Al iniciar la galería trae imágenes RANDOMS, ahí no se aplica el scroll infinito.
-Pero luego de realizar una búsqueda, las "páginas aparecerán debajo" generando el scroll infinito, llamando a la siguiente página.
-Al abrir cualquier imágen, se trae los Tags. *dependiendo el tamaño de pantalla trae una cantidad de tags : < 450px trae un máximo de 3, < de 800px un máx de 6  o trae el total de tags que exista para pantallas mayores a 801px*
-Se puede clickear los tags, y automáticamente se generará una búsqueda.
-Al tipear en el buscador, se puede hacer click en search, o apretar enter para realizar la búsqueda.
+- En este proyecto crearé una GALERÍA DE IMÁGENES usando React.
+- Al iniciar la galería trae imágenes RANDOMS, ahí no se aplica el scroll infinito.
+- Luego de realizar una búsqueda, las "páginas aparecerán debajo" generando el scroll infinito, llamando a la siguiente página.
+- Al abrir cualquier imágen, se trae los Tags. *dependiendo el tamaño de pantalla trae una cantidad de tags : < 450px trae un máximo de 3, < de 800px un máx de 6  o trae el total de tags que exista para pantallas mayores a 801px*
+- Se puede clickear los tags, y automáticamente se generará una búsqueda.
+- Al tipear en el buscador, se puede hacer click en search, o apretar enter para realizar la búsqueda.
 
 
 ## ¿Que uso?
